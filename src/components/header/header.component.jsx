@@ -1,5 +1,10 @@
 import React from "react";
+import Popup from "reactjs-popup";
 import "./header.styles.scss";
+import prependImage from "../previewlayout/previewlayout.component";
+let getLink = () => {
+  return document.getElementById("url").value;
+};
 
 const Header = () => (
   <div className="header">
@@ -13,7 +18,21 @@ const Header = () => (
       </div>
     </div>
     <div className="header__addpicture">
-      <button className="addpicture">Add a photo</button>
+      <Popup trigger={<button className="button"> Add a photo </button>} modal>
+        <div className="modal">
+          <span id="newpictext">Add a new photo</span>
+          <span className="label">Label</span>
+          <input className="input" type="text" />
+          <span className="label">Photo URL</span>
+          <input className="input" id="url" type="text" />
+          <div className="modal__buttons">
+            <button className="button2">Cancel</button>
+            <button className="button3" onClick={prependImage}>
+              Submit
+            </button>
+          </div>
+        </div>
+      </Popup>
     </div>
   </div>
 );

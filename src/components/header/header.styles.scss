@@ -71,7 +71,7 @@
     contrast(93%);
 }
 
-.addpicture {
+.button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,4 +89,113 @@
   line-height: 22px;
   cursor: pointer;
   color: #ffffff;
+}
+
+.modal__buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 55px;
+  width: 100%;
+  color: #ffffff;
+}
+.button2 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid white !important;
+  background-color: white !important;
+  border: none;
+  width: 105px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #bdbdbd;
+}
+
+.button3 {
+  box-sizing: border-box;
+  filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #3db46d;
+  background-color: #3db46d;
+  width: 105px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: white;
+}
+
+.modal {
+  background-color: white;
+  border: 1px solid #bdbdbd;
+  width: 620px;
+  height: 367.2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: 500;
+  border-radius: 12px;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.1));
+}
+
+#newpictext {
+  font-size: 24px;
+  line-height: 33px;
+  color: #333333;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 65px;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 19px;
+  color: #4f4f4f;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 65px;
+}
+
+.input {
+  width: 552.33px;
+  height: 55px;
+  border: 1px solid #4f4f4f;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.1));
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 19px;
+  color: #bdbdbd;
+  padding: 20px;
+  overflow: auto;
+}
+
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.5);
 }
