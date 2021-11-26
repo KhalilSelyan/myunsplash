@@ -1,17 +1,7 @@
-.grid-item {
-  width: 30%;
-  margin-bottom: 20px;
-  margin-left: 50px;
+#masonry {
+  padding-left: 20px;
   img {
     border-radius: 16px;
-    width: 100%;
   }
 }
 
-.grid {
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}

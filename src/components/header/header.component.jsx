@@ -1,40 +1,70 @@
-import React from "react";
+import { React } from "react";
 import Popup from "reactjs-popup";
 import "./header.styles.scss";
-import prependImage from "../previewlayout/previewlayout.component";
-let getLink = () => {
-  return document.getElementById("url").value;
-};
+import { useDispatch } from "react-redux";
+import { addImage, setSearchText } from "../../redux/image/image.actions";
 
-const Header = () => (
-  <div className="header">
-    <div className="logosearch">
-      <div className="header__logo">
-        <img src="/my_unsplash_logo.svg" alt="unsplash" />
-      </div>
-      <div className="header__search">
-        <img id="searchicon" src="/search.ico" alt="search" />
-        <input id="search" type="text" placeholder="Search by name" />
-      </div>
-    </div>
-    <div className="header__addpicture">
-      <Popup trigger={<button className="button"> Add a photo </button>} modal>
-        <div className="modal">
-          <span id="newpictext">Add a new photo</span>
-          <span className="label">Label</span>
-          <input className="input" type="text" />
-          <span className="label">Photo URL</span>
-          <input className="input" id="url" type="text" />
-          <div className="modal__buttons">
-            <button className="button2">Cancel</button>
-            <button className="button3" onClick={prependImage}>
-              Submit
-            </button>
-          </div>
+const Header = () => {
+  const dispatch = useDispatch();
+  return (
+    <div className="header">
+      <div className="logosearch">
+        <div className="header__logo">
+          <img src="/my_unsplash_logo.svg" alt="unsplash" />
         </div>
-      </Popup>
+        <div className="header__search">
+          <img id="searchicon" src="/search.ico" alt="search" />
+          <input
+            id="search"
+            type="text"
+            placeholder="Search by name"
+            onChange={(e) => {
+              const search = e.target.value;
+              dispatch(setSearchText(search));
+            }}
+          />
+        </div>
+      </div>
+      <div className="header__addpicture">
+        <Popup trigger={<button className="button">Add a photo</button>} modal>
+          {(close) => (
+            <div className="modal">
+              <span id="newpictext">Add a new photo</span>
+              <span className="label">Label</span>
+              <input className="input" id="label" type="text" required />
+              <span className="label">Photo URL</span>
+              <input className="input" id="url" type="text" required />
+              <div className="modal__buttons">
+                <button
+                  className="button2"
+                  onClick={() => {
+                    close();
+                  }}
+                >
+                  Cancel
+                </button>
+                <button
+                  className="button3"
+                  onClick={() => {
+                    let item = {
+                      link: document.getElementById("url").value,
+                      label: document.getElementById("label").value,
+                    };
+                    if (item.link.length > 0 && item.label.length > 0) {
+                      dispatch(addImage(item));
+                      close();
+                    }
+                  }}
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          )}
+        </Popup>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Header;
