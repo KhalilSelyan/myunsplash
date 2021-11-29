@@ -17,7 +17,7 @@ const imageReducer = (state = INITIAL_STATE, action) => {
     case ImageActionTypes.REMOVE_IMAGE:
       return {
         ...state,
-        imageList: removeImage(state.imageList, action.payload),
+        imageList: removeImage(action.payload),
       };
     case ImageActionTypes.SET_SEARCH_TEXT:
       return {

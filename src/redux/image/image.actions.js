@@ -5,9 +5,9 @@ export const addImage = (image) => ({
   payload: image,
 });
 
-export const removeImage = (image) => ({
+export const removeImage = (imageList, image) => ({
   type: ImageActionTypes.REMOVE_IMAGE,
-  payload: image,
+  payload: { imageList,image },
 });
 
 export const setSearchText = (searchText) => ({

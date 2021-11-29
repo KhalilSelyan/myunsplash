@@ -6,6 +6,7 @@ import { addImage, setSearchText } from "../../redux/image/image.actions";
 
 const Header = () => {
   const dispatch = useDispatch();
+  let idCounter = 0;
   return (
     <div className="header">
       <div className="logosearch">
@@ -49,9 +50,11 @@ const Header = () => {
                     let item = {
                       link: document.getElementById("url").value,
                       label: document.getElementById("label").value,
+                      id: idCounter,
                     };
                     if (item.link.length > 0 && item.label.length > 0) {
                       dispatch(addImage(item));
+                      idCounter++;
                       close();
                     }
                   }}

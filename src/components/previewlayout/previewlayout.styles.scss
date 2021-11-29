@@ -5,3 +5,77 @@
   }
 }
 
+.picture-container {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+}
+
+.label1 {
+  position: absolute;
+  bottom: 3%;
+  left: 3%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  color: white;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+}
+
+.delete-button {
+  width: 63px;
+  height: 23px;
+  border: 1px solid #eb5757;
+  box-sizing: border-box;
+  border-radius: 38px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: lowercase;
+  color: #eb5757;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+
+.image-info {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+}
+
+.image-info2 {
+  display: flex;
+}
